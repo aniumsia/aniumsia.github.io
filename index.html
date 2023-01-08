@@ -67,7 +67,11 @@ body {
 
         var aniumsiaQueotes;
 
-        fetch('https://github.com/aniumsia/aniumsia.github.io/blob/main/aniumsia.txt')
+        fetch('aniumsia.txt', headers: {
+            "Access-Control-Allow-Headers" : "Content-Type",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+            })
             .then(res => res.text())
             .then(data => {
                 aniumsiaQueotes = data;
